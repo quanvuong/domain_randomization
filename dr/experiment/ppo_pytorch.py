@@ -318,14 +318,25 @@ class PPO_Pytorch(object):
     @classmethod
     def _vec_to_dict(cls, env_id, means, stdevs):
 
-        assert env_id == 'Walker', 'Only support Walker for in this branch'
-
-        return dict(
-            mass=means[:7],
-            damping=means[7:-1],
-            gravity=means[-1]
-        ), dict(
-            mass=stdevs[:7],
-            damping=stdevs[7:-1],
-            gravity=stdevs[-1]
-        )
+        if env_id == 'Walker':
+            return dict(
+                mass=means[:7],
+                damping=means[7:-1],
+                gravity=means[-1]
+            ), dict(
+                mass=stdevs[:7],
+                damping=stdevs[7:-1],
+                gravity=stdevs[-1]
+            )
+        elif env_id == 'Hopper':
+            return dict(
+                mass=means[:4],
+                damping=means[4:-1],
+                gravity=means[-1]
+            ), dict(
+                mass=stdevs[:4],
+                damping=stdevs[4:-1],
+                gravity=stdevs[-1]
+            )
+        else:
+            exit('Unrecognized environment')
