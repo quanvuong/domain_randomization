@@ -215,7 +215,12 @@ class PPO_Pytorch(object):
         self.env_dist.backend.set_collision_detector(env_dist.root_env, collision_detector)
         self.env_dist.seed(seed)
 
-        self.eval_envs = [gym.make('Walker2d-v2') for _ in range(num_eval_env)]
+        if env_name == 'Walker':
+            self.eval_envs = [gym.make('Walker2d-v2') for _ in range(num_eval_env)]
+        elif env_name == 'Hopper':
+            self.eval_envs = [gym.make('Hopper-v2') for _ in range(num_eval_env)]
+        else:
+            exit('Unrecognized environment')
 
         if COMM.Get_rank() == 0:
             self.optimizer = CEMOptimizer(

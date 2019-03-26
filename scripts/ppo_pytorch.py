@@ -32,7 +32,6 @@ def main(experiment_name, env_name, backend, collision_detector,
          debug, num_eval_env):
     assert env_dist_stdev == 1.0
     assert mean_scale == 1.0
-    assert env_name == 'Walker'
 
     if debug:
         pop_size = 3
