@@ -1,3 +1,6 @@
+import os
+import os.path as osp
+import pickle
 import random
 from collections import deque
 from datetime import datetime
@@ -9,9 +12,6 @@ import torch
 import torch.optim as optim
 from mpi4py import MPI
 
-import os
-import os.path as osp
-import pickle
 import dr
 from dr.ppo.models import Policy, ValueNet
 from dr.ppo.train import one_train_iter
@@ -230,7 +230,7 @@ class PPO_Pytorch(object):
                 num_elites=self.train_params['num_elites'],
                 cost_function=self._cost_function,
                 lower_bound=0.0,
-                #TODO: setting the upper bound this way, means that
+                # TODO: setting the upper bound this way, means that
                 # if the initial dimension value is 0, then the upper bound is 0
                 upper_bound=cem_init_mean * 5.0,
                 alpha=0.75,
