@@ -309,8 +309,6 @@ class PPO_Pytorch(object):
     @classmethod
     def _dict_to_vec(cls, env_id, d):
 
-        assert env_id == 'Walker', 'Only support Walker for in this branch'
-
         return np.concatenate((
             d['mass'],
             d['damping'],
