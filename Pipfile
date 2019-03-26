@@ -1,0 +1,31 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+jupyter = "*"
+ipdb = "*"
+
+[packages]
+dr = {path = ".",editable = true}
+gym = {git = "https://github.com/quanvuong/dart-env.git",editable = true}
+pydart = {git = "https://github.com/sehoonha/pydart2",editable = true}
+mujoco-py = "*"
+PyQt5 = "*"
+joblib = "*"
+scipy = "*"
+baselines = {git = "https://github.com/quanvuong/baselines.git",editable = true}
+tensorflow = "==1.13.1"
+parasol = {git = "https://github.com/sharadmv/parasol.git",editable = true}
+deepx = "*"
+fabric = "*"
+path-py = "*"
+boto3 = "*"
+click = "*"
+gitpython = "*"
+mpi4py = "*"
+tensorboardX = "*"
+
+[requires]
+python_version = "3.6"

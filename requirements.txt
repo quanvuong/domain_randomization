@@ -1,0 +1,4 @@
+gym @ git+https://github.com/DartEnv/dart-env#egg=gym
+-e git+https://github.com/sehoonha/pydart2#egg=pydart
+mujoco-py
+pyqt5
