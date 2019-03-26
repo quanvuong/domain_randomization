@@ -14,6 +14,10 @@ During training, you can view the hyper-parameters of the run and training progr
 $ tensorboard --logdir runs
 ```
 
+### TODO
+
+- Add code to visualize results
+
 ### Contributors
 
 [Sharad Vikram](https://github.com/sharadmv)
