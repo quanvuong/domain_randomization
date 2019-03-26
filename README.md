@@ -13,3 +13,7 @@ During training, you can view the hyper-parameters of the run and training progr
 ```bash
 $ tensorboard --logdir runs
 ```
+
+### Contributors
+
+[Sharad Vikram](https://github.com/sharadmv)
